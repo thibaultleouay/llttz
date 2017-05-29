@@ -2,10 +2,6 @@ package gapchenko.llttz;
 
 import java.util.TimeZone;
 
-/**
- * @author artemgapchenko
- * Created on 18.04.14.
- */
 public interface IConverter {
     /**
      * Obtains the instance of {@link java.util.TimeZone} based on the provided latitude and longitude.

@@ -6,10 +6,6 @@ import static java.lang.Math.*;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
-/**
- * @author artemgapchenko
- * Created on 22.04.14.
- */
 public abstract class TimeZoneStore {
 
     abstract public void insert(final Location loc);

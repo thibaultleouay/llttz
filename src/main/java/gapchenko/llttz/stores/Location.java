@@ -1,11 +1,8 @@
 package gapchenko.llttz.stores;
 
 import java.util.Arrays;
+import java.util.Objects;
 
-/**
- * @author artemgapchenko
- * Created on 22.04.14.
- */
 public class Location {
     private double[] coordinates;
     private String zone;
@@ -37,7 +34,17 @@ public class Location {
 
     @Override
     public boolean equals(Object obj) {
-        if (!obj.getClass().isAssignableFrom(Location.class)) throw new IllegalArgumentException("provided obj is: " + obj);
+    	if (obj == null ) {
+    		return false;
+    	}
+    	if(this.getClass() != obj.getClass()) {
+    		return false;
+    	}
         return Arrays.equals(coordinates, ((Location) obj).getCoordinates());
+    }
+    
+    @Override
+    public int hashCode() {
+    	return Objects.hash(coordinates,zone);
     }
 }

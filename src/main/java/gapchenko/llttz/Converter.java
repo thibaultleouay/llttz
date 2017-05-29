@@ -1,17 +1,20 @@
 package gapchenko.llttz;
 
-import gapchenko.llttz.stores.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.TimeZone;
 
-/**
- * @author artemgapchenko
- * Created on 18.04.14.
- */
-public class Converter implements IConverter {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import gapchenko.llttz.stores.Location;
+import gapchenko.llttz.stores.TimeZoneStore;
+
+public final class Converter implements IConverter {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Converter.class);
+	
     private TimeZoneStore tzStore;
     private static Converter instance = null;
 
@@ -23,7 +26,7 @@ public class Converter implements IConverter {
             tzStore = (TimeZoneStore) clazz.newInstance();
             loadData();
         } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
+        	LOGGER.error("error while instantiating :",e);
         }
     }
 
@@ -42,11 +45,9 @@ public class Converter implements IConverter {
     }
 
     private void loadData() {
-        BufferedReader br = new BufferedReader(
-                new InputStreamReader(Converter.class.getResourceAsStream("/timezones.csv"))
-        );
 
-        try {
+
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(Converter.class.getResourceAsStream("/timezones.csv")));) {
             String line;
             String[] location;
 
@@ -55,7 +56,7 @@ public class Converter implements IConverter {
                 tzStore.insert(new Location(Double.valueOf(location[1]), Double.valueOf(location[2]), location[0]));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+        	LOGGER.error("error while reading file : ", e);
         }
     }
 }

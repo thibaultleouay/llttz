@@ -5,8 +5,6 @@ import java.util.*;
 /**
  * Simple implementation of k-d tree which allows to perform search of nearest neighbour in O(ln) time in the best case.
  * @see <a href="http://en.wikipedia.org/wiki/K-d_tree">k-d tree</a>
- * @author artemgapchenko
- * Created on 22.04.14.
  */
 public class TimeZoneTreeStore extends TimeZoneStore {
     private TwoDimTreeNode root;

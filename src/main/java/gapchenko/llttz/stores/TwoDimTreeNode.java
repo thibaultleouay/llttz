@@ -1,9 +1,5 @@
 package gapchenko.llttz.stores;
 
-/**
- * @author artem
- * Created on 4/23/14.
- */
 public class TwoDimTreeNode {
     private TwoDimTreeNode left;
     private TwoDimTreeNode right;

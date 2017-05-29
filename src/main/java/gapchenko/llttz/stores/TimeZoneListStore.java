@@ -4,10 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.TimeZone;
 
-/**
- * @author artemgapchenko
- * Created on 22.04.14.
- */
 public class TimeZoneListStore extends TimeZoneStore {
     private List<Location> timeZones = new LinkedList<>();
 

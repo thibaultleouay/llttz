@@ -6,10 +6,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import gapchenko.llttz.modules.ListStoreModule;
 import gapchenko.llttz.stores.TimeZoneListStore;
 
 public class ConverterTest {

@@ -1,10 +1,12 @@
 package gapchenko.llttz.stores;
 
-import java.util.TimeZone;
-
-import static java.lang.Math.*;
+import static java.lang.Math.acos;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
+import static java.lang.Math.toDegrees;
+import static java.lang.Math.toRadians;
+
+import java.util.TimeZone;
 
 public abstract class TimeZoneStore {
 

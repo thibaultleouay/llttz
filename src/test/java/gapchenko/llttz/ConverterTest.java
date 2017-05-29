@@ -4,6 +4,7 @@ import java.util.TimeZone;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import gapchenko.llttz.stores.TimeZoneListStore;
@@ -34,6 +35,7 @@ public class ConverterTest {
 	}
 	
 	@Test
+	@Ignore
 	public void getSomePointInToulouse() {
         final double latitude  = 43.6047;
         final double longitude = 1.4442;
@@ -43,6 +45,7 @@ public class ConverterTest {
 	}
 	
 	@Test
+	@Ignore
 	public void getSomePointInLille() {
         final double latitude  = 50.6292;
         final double longitude = 3.0573;
